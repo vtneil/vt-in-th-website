@@ -1,0 +1,51 @@
+:root {
+    --primary-color: #8e2e2e;
+    --primary-light: #c32222;
+    --primary-light-border: #ad3838;
+    --bs-primary-rgb: 142, 46, 46;
+    --bs-link-color-rgb: 142, 46, 46;
+    --bs-link-hover-color-rgb: 195, 34, 34;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-bg: var(--primary-light);
+    --bs-btn-hover-border-color: var(--primary-light);
+    --bs-btn-active-bg: var(--primary-light);
+    --bs-btn-active-border-color: var(--primary-light);
+    --bs-btn-disabled-bg: var(--primary-color);
+    --bs-btn-disabled-border-color: var(--primary-color)
+}
+
+.btn-outline-primary {
+    --bs-btn-color: var(--primary-color);
+    --bs-btn-border-color: var(--primary-color);
+    --bs-btn-hover-bg: var(--primary-color);
+    --bs-btn-hover-border-color: var(--primary-color);
+    --bs-btn-active-bg: var(--primary-color);
+    --bs-btn-active-border-color: var(--primary-color);
+    --bs-btn-disabled-color: var(--primary-color);
+    --bs-btn-disabled-border-color: var(--primary-color);
+}
+
+.dropdown-menu {
+    --bs-dropdown-link-active-bg: var(--primary-color);
+}
+
+.iframe-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 200%;
+}
+
+.iframe-container iframe {
+    transform: scale(1.0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html" charset="UTF-8">
+    <title>Pre-COMP103: Introduction to Microcontroller Programming</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body>
+
+<h1>Pre-COMP103: Introduction to Microcontroller Programming</h1>
+<h2>CanSat Data Payload Brief</h2>
+<p style="text-align: justify">
+    The data from CanSat to the ground station is sent in a string format: CSV (Comma Separated Value).
+    In this CanSat testing, the data is of the following:<br><br>
+    <strong><samp>CS:03,32,13.100200,100.500600,32.59,1013.25,0.00,42.00,3.45,</samp></strong><br><br>
+    The data is separated by comma "<samp>,</samp>".
+    Each value between commas represents one data. For instance:<br>
+</p>
+<table>
+    <tr>
+        <th>Position</th>
+        <th>Data (Unit)</th>
+        <th>Examples</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>CanSat ID</td>
+        <td>CS:03</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Packet counter</td>
+        <td>32</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>GPS Latitude (deg)</td>
+        <td>13.100200</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>GPS Longitude (deg)</td>
+        <td>100.500600</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Temperature (deg C)</td>
+        <td>32.59</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Barometric Pressure (hPa)</td>
+        <td>1013.25</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>Altitude from SSL (m)</td>
+        <td>0.00</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>Humidity (% RH)</td>
+        <td>42.00</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>Battery Voltage (V)</td>
+        <td>3.45</td>
+    </tr>
+</table>
+
+<h2>Using PuTTY to monitor Serial devices (Windows)</h2>
+
+<ol>
+    <li><a href="files/putty-64bit-0.78-installer.msi">Install PuTTY</a></li>
+    <li><a href="files/CH341SER.EXE">Install CH340 Driver</a></li>
+    <li>Connect the Serial device</li>
+    <li>Open cmd/terminal/commandline</li>
+    <li>Type "MODE" in the cmd, the name of device should be <samp>COMn</samp>, e.g., <samp>COM6</samp>.</li>
+    <li>Open PuTTY</li>
+    <li>On the left pane, click "Serial"</li>
+    <li>Set Serial line to <samp>COMn</samp></li>
+    <li>Set baudrate to 9600</li>
+</ol>
+
+<h2>Instructions</h2>
+Please download these required software.<br>
+
+<ul style="line-height: 2em">
+    <li><a href="files/putty-64bit-0.78-installer.msi">
+        Download PuTTY (for Windows user)
+    </a></li>
+
+    <li><a href="files/CH341SER.EXE">
+        Download CH340 Serial Device (for Windows user)
+    </a></li>
+
+    <li><a href="https://www.arduino.cc/en/software">
+        Download Arduino IDE 2 (Official website)
+    </a></li>
+
+    <li>
+        Installation tutorial in the slideshow.
+    </li>
+</ul>
+
+<h2>Course materials</h2>
+
+<ul style="line-height: 2em">
+    <li><a href="/teachings/pre_comp103/files/pre-comp103-ppt.pdf">
+        Download Slideshow (PDF)
+    </a></li>
+
+    <li><a href="https://github.com/vtneil/cansat_sk_src/releases/download/release/cansat_src.zip">
+        Download Source code (ZIP)
+    </a></li>
+
+    <li><a href="https://github.com/vtneil/cansat_sk_src">
+        Download Source code (GitHub Repository)
+    </a></li>
+
+    <li><a href="/books/comp_103_guidebook/pre-comp103-guidebook-16-feb-2023.pdf">
+        Download Guidebook on Microcontroller Programming (Pre-release Edition)
+    </a></li>
+</ul>
+
+<h2>Basic Electronics (by Sora)</h2>
+<ul style="line-height: 2em; font-size: 1.5em">
+    <li><a href="/teachings/pre_comp103/files/sk-elec.pdf">Download Slideshow (PDF)</a></li>
+    <li><a href="/teachings/pre_comp103/files/sk-elec.pptx">Download Slideshow (PPTX)</a></li>
+</ul>
+
+</body>
+</html>

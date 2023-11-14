@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8e2e2e">
+    <meta name="application-name" content="Vivatsathorn">
+    <meta name="apple-mobile-web-app-title" content="Vivatsathorn">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/assets/vt-brand-192-red-8e2e2e.png">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/custom.css" type="text/css">
+
+    <!--Begin Global Scripts-->
+    <script src="/js/popper.min.js" defer></script>
+    <script src="/js/bootstrap.min.js" defer></script>
+    <script src="/js/jquery-3.6.3.min.js" defer></script>
+    <script src="/components/nav.js" defer></script>
+    <!--End Global Scripts-->
+
+    <!--Begin Page Scripts-->
+    <script src="/calculator/pressure_vessel/calc.js" defer></script>
+    <!--End Page Scripts-->
+
+    <title>Calculator: Pressure Vessel</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body>
+<div id="navbar"></div>
+
+<div id="main-page" class="container pb-5 mb-5">
+    <h1 class="mt-5">Calculator: Pressure Vessel</h1>
+    <p class="lead">
+        Cylindrical pressure vessel calculator: Barlow, Lame, or ASME model.
+    </p>
+    <hr>
+
+    <div>
+        <strong>Max Design Pressure: </strong>
+        <span id="pd-mpa">0</span>
+        MPa (<span id="pd-psi">0</span> psi)
+    </div>
+
+    <div>
+        <strong>Max Burst Pressure: </strong>
+        <span id="pb-mpa">0</span>
+        MPa (<span id="pb-psi">0</span> psi)
+    </div>
+
+    <div>
+        <strong>Burst Safety Factor: </strong>
+        <span id="sb">0</span>
+    </div>
+
+    <hr>
+
+    <div>
+        <form onsubmit="make_calculation(); return false">
+            <div class="mb-3">
+                <label for="input-od" class="form-label">Outer Diameter (mm)</label>
+                <input type="number" step="any" class="form-control" id="input-od" value="152.40">
+            </div>
+
+            <div class="mb-3">
+                <label for="input-t" class="form-label">Wall Thickness (mm)</label>
+                <input type="number" step="any" class="form-control" id="input-t" value="6.00">
+            </div>
+
+            <div class="mb-3">
+                <label for="input-fty" class="form-label">Yield Strength (MPa)</label>
+                <input type="number" step="any" class="form-control" id="input-fty" value="241">
+            </div>
+
+            <div class="mb-3">
+                <label for="input-ftu" class="form-label">Ultimate Strength (MPa)</label>
+                <input type="number" step="any" class="form-control" id="input-ftu" value="290">
+            </div>
+
+            <div class="mb-3">
+                <label for="input-e" class="form-label">Efficiency (0 - 1)</label>
+                <input type="number" step="any" min="0" max="1" class="form-control" id="input-e" value="0.95">
+            </div>
+
+            <div class="mb-3">
+                <label for="input-f" class="form-label">Safety Factor (>= 1)</label>
+                <input type="number" step="any" min="1.0" class="form-control" id="input-f" value="1.5">
+            </div>
+
+            <div class="mb-3">
+                <label for="select-mode" class="form-label">Calculation Model</label>
+                <select class="form-select" id="select-mode">
+                    <option value="1">Barlow's</option>
+                    <option value="2">Lame</option>
+                    <option selected value="3">ASME</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Calculate!
+            </button>
+
+            <button type="button" class="btn btn-outline-primary" onclick="set_6061()">
+                Set AL6061-T6
+            </button>
+
+            <button type="button" class="btn btn-outline-primary" onclick="set_6063()">
+                Set AL6063-T6
+            </button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

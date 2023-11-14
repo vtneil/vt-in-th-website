@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['deserialize_0',['deserialize',['../classvt_1_1serializer.html#a9199dc9fec28cb395e870fe29b5c1dfe',1,'vt::serializer::deserialize(const memory_buffer&lt; S &gt; &amp;data)'],['../classvt_1_1serializer.html#a279c26af1ef625bd75e105e87adb0bc8',1,'vt::serializer::deserialize(const byte_pool &amp;data)'],['../classvt_1_1serializer.html#ad4e54d2cd9220cbfe5f8fc26d2e90796',1,'vt::serializer::deserialize(void *data)']]],
+  ['dynamic_5fcontainer_1',['dynamic_container',['../classvt_1_1detail_1_1dynamic__container.html#ad15276c4f21c90aad4fea93c5ac428ce',1,'vt::detail::dynamic_container::dynamic_container()=delete'],['../classvt_1_1detail_1_1dynamic__container.html#ab4fe9253482e3c45b2593919917a4d17',1,'vt::detail::dynamic_container::dynamic_container(const dynamic_container &amp;other)'],['../classvt_1_1detail_1_1dynamic__container.html#a9c98ee5cdb0c0a7657de43c262844715',1,'vt::detail::dynamic_container::dynamic_container(dynamic_container &amp;&amp;) noexcept=delete'],['../classvt_1_1detail_1_1dynamic__container.html#ae6a771ea4e040e79955a9a192c52994f',1,'vt::detail::dynamic_container::dynamic_container(size_t n)']]]
+];

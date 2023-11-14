@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#8e2e2e">
+    <meta name="application-name" content="Vivatsathorn">
+    <meta name="apple-mobile-web-app-title" content="Vivatsathorn">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="/assets/vt-brand-192-red-8e2e2e.png">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/custom.css" type="text/css">
+
+    <!--Begin Global Scripts-->
+    <script src="/js/popper.min.js" defer></script>
+    <script src="/js/bootstrap.min.js" defer></script>
+    <script src="/js/jquery-3.6.3.min.js" defer></script>
+    <script src="/components/nav.js" defer></script>
+    <!--End Global Scripts-->
+
+    <!--Begin Page Scripts-->
+    <link rel="stylesheet" type="text/css" href="/python/pyscript/pyscript.css">
+    <script src="/python/pyscript/pyscript.js" defer></script>
+    <!--End Page Scripts-->
+
+    <py-config>
+    </py-config>
+
+    <title>Python REPL</title>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body>
+<div id="navbar"></div>
+
+<div id="main-page" class="container pb-5 mb-5">
+    <h1 class="mt-5">Python REPL <span class="badge bg-danger rounded-4">Beta</span></h1>
+    <p class="lead">
+        <span class="badge bg-info">PyScript hosted on Mar 6, 2023</span><br>
+        This page provides Python Editor/Interpreter. Powered by PyScript.
+    </p>
+    <hr>
+
+    <py-script src="/python/pyscript/clear_terminal.py"></py-script>
+
+    <div class="container mb-3">
+        <h4>Start Writing!</h4>
+        <p>
+            Tips: <span class="badge bg-secondary">SHIFT</span> + <span class="badge bg-secondary">ENTER</span>
+            to run the code or click run button on the right. New code block is auto-generated.
+        </p>
+        <py-repl std-out="stdout" auto-generate="true"></py-repl>
+    </div>
+
+    <div class="container" id="stdout_wr">
+        <h4>Output Terminal</h4>
+        <py-terminal id="stdout"></py-terminal>
+    </div>
+</div>
+</body>
+</html>
