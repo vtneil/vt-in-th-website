@@ -65,7 +65,7 @@ const loadPage = function () {
 
     const viewResults = urlParams.has('results');
     if (viewResults) {
-        window.location.href = 'results.html';
+        window.location.href = '/poll/button-layout/results.html';
     }
 
     const lockForm = !urlParams.has('admin');
