@@ -1,16 +1,21 @@
 const vKey = 'visited';
 const buttonLabels = [
-    ['Button A', 'a'],
-    ['Button B', 'b']
+    ['200', 'a'],
+    ['200', 'b']
 ];
 
-const loadPoll = function () {
-    const buttonContainer = document.getElementById('buttonContainer');
+const loadPoll = function (mode) {
+    const layout = (mode === 'random') ? ((Math.random() < 0.5) ? 'column' : 'row') : mode;
 
-    const layout = Math.random() < 0.5 ? 'column' : 'row';
-    buttonContainer.style.flexDirection = layout;
 
-    console.log(layout)
+
+    const textField = document.createElement('div');
+    textField.id = 'textField';
+    textField.innerText = '100 + 100 = ?'
+
+    const buttonField = document.createElement('div');
+    buttonField.id = 'buttonField';
+    buttonField.style.flexDirection = layout;
 
     for (const buttonLabel of buttonLabels) {
         const button = document.createElement('a');
@@ -31,8 +36,19 @@ const loadPoll = function () {
             loadThankYou();
         });
 
-        button.classList.add('btn', 'btn-primary', 'button');
-        buttonContainer.appendChild(button);
+        button.classList.add('btn', 'btn-default', 'button');
+        buttonField.appendChild(button);
+    }
+
+    const buttonContainer = document.getElementById('buttonContainer');
+    buttonContainer.style.flexDirection = 'column';
+    buttonContainer.appendChild(textField);
+    buttonContainer.appendChild(buttonField);
+
+    if (layout === 'column') {
+        document.querySelectorAll('.button').forEach(function (btn) {
+            btn.style.padding = '10px 60px';
+        });
     }
 };
 
@@ -48,7 +64,10 @@ const loadLimit = function () {
 
 const loadPage = function () {
     if (localStorage.getItem(vKey) === null || localStorage.getItem(vKey) === '0') {
-        loadPoll();
+        const urlParams = new URLSearchParams(window.location.search);
+        const param = urlParams.get('q');
+        const mode = (param === null) ? 'random' : ((param === 'a') ? 'column' : 'row');
+        loadPoll(mode);
     } else {
         loadLimit();
     }
