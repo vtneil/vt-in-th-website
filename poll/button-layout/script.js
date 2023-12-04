@@ -62,8 +62,13 @@ const loadLimit = function () {
 
 const loadPage = function () {
     const urlParams = new URLSearchParams(window.location.search);
-    const lockForm = urlParams.get('admin') === null;
 
+    const viewResults = urlParams.has('results');
+    if (viewResults) {
+        window.location.href = 'results.html';
+    }
+
+    const lockForm = !urlParams.has('admin');
     if (localStorage.getItem(vKey) === null || localStorage.getItem(vKey) === '0' || !lockForm) {
         const param = urlParams.get('q');
         const mode = (param === null) ? 'random' : ((param === 'a') ? 'column' : 'row');
