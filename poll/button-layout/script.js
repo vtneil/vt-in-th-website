@@ -4,10 +4,8 @@ const buttonLabels = [
     ['200', 'b']
 ];
 
-const loadPoll = function (mode) {
+const loadPoll = function (mode, lockForm) {
     const layout = (mode === 'random') ? ((Math.random() < 0.5) ? 'column' : 'row') : mode;
-
-
 
     const textField = document.createElement('div');
     textField.id = 'textField';
@@ -30,7 +28,7 @@ const loadPoll = function (mode) {
                 console.log('Form submitted.');
             });
 
-            if (localStorage.getItem(vKey) === null) {
+            if (localStorage.getItem(vKey) === null && lockForm) {
                 adminSetPoll();
             }
             loadThankYou();
@@ -63,11 +61,13 @@ const loadLimit = function () {
 };
 
 const loadPage = function () {
-    if (localStorage.getItem(vKey) === null || localStorage.getItem(vKey) === '0') {
-        const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window.location.search);
+    const lockForm = urlParams.get('admin') === null;
+
+    if (localStorage.getItem(vKey) === null || localStorage.getItem(vKey) === '0' || !lockForm) {
         const param = urlParams.get('q');
         const mode = (param === null) ? 'random' : ((param === 'a') ? 'column' : 'row');
-        loadPoll(mode);
+        loadPoll(mode, lockForm);
     } else {
         loadLimit();
     }
