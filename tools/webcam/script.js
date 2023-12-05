@@ -1,6 +1,7 @@
 const videoElement = document.getElementById('video');
 const cameraSelect = document.getElementById('cameraSelect');
 const fullscreenBtn = document.getElementById('fullscreenBtn');
+const reloadBtn = document.getElementById('reloadBtn');
 
 const reloadCamera = function () {
     navigator.mediaDevices.getUserMedia({video: true})
@@ -28,11 +29,14 @@ const reloadCamera = function () {
             videoElement.msRequestFullscreen();
         }
     };
+
+    reloadBtn.onclick = reloadCamera;
 }
 
 reloadCamera();
 
 function setCameraDropdown(deviceInfos) {
+    removeOptions(cameraSelect);
     for (const deviceInfo of deviceInfos) {
         if (deviceInfo.kind === 'videoinput') {
             const option = document.createElement('option');
@@ -58,4 +62,11 @@ function setCamera(deviceId) {
 
 function handleError(error) {
     console.error('Error: ', error);
+}
+
+function removeOptions(selectElement) {
+    let i, L = selectElement.options.length - 1;
+    for (i = L; i >= 0; i--) {
+        selectElement.remove(i);
+    }
 }
