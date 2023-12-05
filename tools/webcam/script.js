@@ -5,7 +5,7 @@ const fullscreenBtn = document.getElementById('fullscreenBtn');
 const reloadCamera = function () {
     navigator.mediaDevices.getUserMedia({video: true})
         .then(function (r) {
-            location.reload();
+            console.log(r);
         })
         .catch(handleError);
 
